@@ -38,9 +38,9 @@ namespace ShopMVCAPINew.App {
 
         public Task GetMany(string collectionName, FilterDefinition<BsonDocument> filterDefinition,
             Action<BsonDocument, int> action) {
-            BsonDocument document=new BsonDocument("Name",new BsonRegularExpression("HONG"));
+           // BsonDocument document=new BsonDocument("Name",new BsonRegularExpression("HONG"));
             var productColl = GetDBCollection<BsonDocument>(collectionName);
-            return productColl.Find(document).ForEachAsync(action);
+            return productColl.Find(filterDefinition).ForEachAsync(action);
         }
 
 
