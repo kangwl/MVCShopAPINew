@@ -350,6 +350,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Control\Carousel.cshtml" />
     <None Include="Web.kangwl - Web Deploy.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

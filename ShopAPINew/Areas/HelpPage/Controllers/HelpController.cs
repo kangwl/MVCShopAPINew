@@ -24,6 +24,7 @@ namespace ShopMVCAPINew.Areas.HelpPage.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.CurrentPage = "help";
             return View(Configuration.Services.GetApiExplorer().ApiDescriptions);
         }
 

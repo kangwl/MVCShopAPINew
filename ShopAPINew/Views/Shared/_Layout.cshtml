@@ -1,33 +1,77 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrapcss")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <a href="~/">ASP.NET Web API</a></p>
-            </div>
-            <div class="float-right">
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("主页", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                    </ul>
-                </nav>
-            </div>
+
+    <div class="navbar-fixed-top">
+        <div style="background-color: #000; height: 15px">
         </div>
-    </header>
-    @RenderBody()
+        <div class="container navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Brand</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="headnav" class="nav navbar-nav">
+                        <li id="index">@Html.ActionLink("主页", "Index", "Home", new { area = "" }, null)</li>
+                        <li id="help">@Html.ActionLink("帮助", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                    </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
+
+    <div class="container" style="padding-top: 90px">
+
+        @RenderSection("carousel", false)
+
+        @RenderBody()
+
+    </div>
+    <nav style="margin-top: 20px;margin-bottom: 0; -ms-border-radius:0; border-radius:0" class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container" style="color: #ffffff; height: 50px; line-height: 50px">
+            All Rights Reserved. 
+        </div>
+    </nav>
+    @Scripts.Render("~/Content/bootstrapjs")
     @RenderSection("scripts", required: false)
+    <script>
+        var current = "@ViewBag.CurrentPage";
+        $("#headnav").find("li").removeClass("active");
+        $("#headnav").find("#" + current).addClass("active");
+    </script>
 </body>
 </html>

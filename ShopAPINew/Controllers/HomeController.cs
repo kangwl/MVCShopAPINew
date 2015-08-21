@@ -24,7 +24,7 @@ namespace ShopMVCAPINew.Controllers {
             //BsonDocument bson = task.Result;
             //ViewBag.PCount = bson.GetValue(0);
 
-            var productColl = App.MongoDBContext.Instance.GetDBCollection<BsonDocument>("Product");
+            //var productColl = App.MongoDBContext.Instance.GetDBCollection<BsonDocument>("Product");
 
 
             //var product1 = new BsonDocument() {
@@ -54,16 +54,16 @@ namespace ShopMVCAPINew.Controllers {
 
 
             
-            FilterDefinitionBuilder<BsonDocument> ft = new FilterDefinitionBuilder<BsonDocument>();
-            //var bsonDoc = ft.Eq("Color", new BsonRegularExpression("white"));
-            var bsonDoc = ft.Eq("Name", "小米4");
-            ProjectionDefinitionBuilder<BsonDocument> pfb=new ProjectionDefinitionBuilder<BsonDocument>();
-            var pj1 = pfb.Exclude("_id");
+            //FilterDefinitionBuilder<BsonDocument> ft = new FilterDefinitionBuilder<BsonDocument>();
+            ////var bsonDoc = ft.Eq("Color", new BsonRegularExpression("white"));
+            //var bsonDoc = ft.Eq("Name", "小米4");
+            //ProjectionDefinitionBuilder<BsonDocument> pfb=new ProjectionDefinitionBuilder<BsonDocument>();
+            //var pj1 = pfb.Exclude("_id");
             
-            productColl.Find(bsonDoc).Project(pj1).ForEachAsync((doc, index) => Response.Write(doc+"--"+index)).Wait();
+            //productColl.Find(bsonDoc).Project(pj1).ForEachAsync((doc, index) => Response.Write(doc+"--"+index)).Wait();
 
-            
-            return View();
+            ViewBag.CurrentPage = "index";
+            return View("Index");
         }
  
     }

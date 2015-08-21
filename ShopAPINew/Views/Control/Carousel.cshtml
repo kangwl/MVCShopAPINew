@@ -1,0 +1,53 @@
+﻿<div id="my-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#my-carousel" data-slide-to="1"></li>
+        <li data-target="#my-carousel" data-slide-to="2"></li>
+        <li data-target="#my-carousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <!--http://placehold.it/1200x475/333333/ffffff?text=我的 API-->
+            <img alt="First slide" src="/Images/main/1.png">
+            <div class="carousel-caption">
+                <h3>api介绍1</h3>
+                <p>此api主要适用于对外设备的调用</p>
+            </div>
+        </div>
+        <div class="item">
+            <img alt="Second slide" src="/Images/main/2.png"/>
+            <div class="carousel-caption">
+                <h3>api介绍2</h3>
+                <p>这是高效的</p>
+            </div>
+        </div>
+        <div class="item">
+            <img alt="Third slide" src="/Images/main/3.png"/>
+            <div class="carousel-caption">
+                <h3>api介绍3</h3>
+                <p>这是简单易用的</p>
+            </div>
+        </div>
+        <div class="item">
+            <img alt="Third slide" src="/Images/main/4.png"/>
+            <div class="carousel-caption">
+                <h3>api介绍4</h3>
+                <p>这是简单易用的</p>
+            </div>
+        </div>
+    </div>
+    <a id="carousel_left" style="display: none" class="left carousel-control" href="#my-carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a id="carousel_right" style="display: none" class="right carousel-control" href="#my-carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+<script>
+    $(document).on("mouseover", "#my-carousel", function () {
+        $("#carousel_left,#carousel_right").show();
+    });
+    $(document).on("mouseout", "#my-carousel", function () {
+        $("#carousel_left,#carousel_right").hide();
+    });
+</script>
