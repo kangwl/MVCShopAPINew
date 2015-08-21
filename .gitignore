@@ -8,3 +8,11 @@
 /.vs/config
 /Backup
 /UpgradeLog.htm
+/packages/EntityFramework.6.0.0
+/packages/EntityFramework.zh-Hans.6.0.0
+/packages/MySql.Data.6.9.7
+/packages/MySql.Data.Entity.6.9.7/*.nupkg
+/packages/MySql.Data.Entity.6.9.7/content/*.transform
+/packages/MySql.Data.Entity.6.9.7/lib/net40
+/packages/MySql.Data.Entity.6.9.7/lib/net45
+/packages/MySql.Data.Entity.6.9.7

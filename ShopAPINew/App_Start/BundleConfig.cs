@@ -36,7 +36,16 @@ namespace ShopMVCAPINew {
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
-           
+            bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css"
+                ));
+
+            bundles.Add(new ScriptBundle("~/Content/bootstrapjs").Include(
+                "~/Scripts/bootstrap.js"
+                ));
+
+
         }
     }
 }

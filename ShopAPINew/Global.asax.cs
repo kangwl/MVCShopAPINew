@@ -20,7 +20,7 @@ namespace ShopMVCAPINew {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            BundleTable.EnableOptimizations = true;
+          //  BundleTable.EnableOptimizations = true;
         }
     }
 }

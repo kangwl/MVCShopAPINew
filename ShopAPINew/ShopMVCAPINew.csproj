@@ -302,6 +302,10 @@
     <None Include="Properties\PublishProfiles\kangwl - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\kangwl - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\main\1.png" />
+    <Content Include="Images\main\2.png" />
+    <Content Include="Images\main\3.png" />
+    <Content Include="Images\main\4.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -351,6 +355,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Control\Carousel.cshtml" />
     <None Include="Web.kangwl - Web Deploy.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

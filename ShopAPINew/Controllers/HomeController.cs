@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -10,37 +11,60 @@ using MongoDB.Driver;
 namespace ShopMVCAPINew.Controllers {
     public class HomeController : Controller {
         public ActionResult Index() {
-            //Task task = App.MongoDbContext.Instance.InsertOne("Product", new BsonDocument() {
+            //Task task = App.MongoDBContext.Instance.Insert("Product", new BsonDocument() {
             //    {"Name", "HONGMI NOTE"}
             //});
             //task.Wait();
             //ViewBag.PCount = task.IsCompleted;
-
-
+ 
             
-           // var productCollection = App.MongoDbContext.Instance.GetDBCollection<Models.Product>("Product");
-           //var project= Builders<BsonDocument>.Projection.Exclude("_id");
-           // var task = productCollection.Find(p => p.Name == "HONGMI NOTE").FirstOrDefaultAsync();
-           // task.Wait();
-           // if (task.IsCompleted) {
-           //     var model = task.Result;
-           // }
+
+            //Task<BsonDocument> task = App.MongoDBContext.Instance.GetOne("Product", new BsonDocument("Name", "HONGMI NOTE"));
 
             //BsonDocument bson = task.Result;
             //ViewBag.PCount = bson.GetValue(0);
 
+            //var productColl = App.MongoDBContext.Instance.GetDBCollection<BsonDocument>("Product");
+
+
+            //var product1 = new BsonDocument() {
+            //    {"Name","小米4"},
+            //    {"Price","5000"},
+            //    {"Color","Red"},
+            //    {"Amount",300000}
+            //};
+            //var product2 = new BsonDocument() {
+            //    {"Name","小米4"},
+            //    {"Price","4900"},
+            //    {"Color","blue"},
+            //    {"Amount",200000}
+            //};
+            //var product3 = new BsonDocument() {
+            //    {"Name","小米4"},
+            //    {"Price","5100"},
+            //    {"Color","white"},
+            //    {"Amount",300000}
+            //};
+            //List<BsonDocument> docs = new List<BsonDocument>();
+            //docs.Add(product1);
+            //docs.Add(product2);
+            //docs.Add(product3);
+            //productColl.InsertManyAsync(docs).Wait();
+           // productColl.InsertOneAsync(product).Wait();
+
+
+            
             //FilterDefinitionBuilder<BsonDocument> ft = new FilterDefinitionBuilder<BsonDocument>();
-            //var f1 = ft.Eq("Name", new BsonRegularExpression("HONG"));
+            ////var bsonDoc = ft.Eq("Color", new BsonRegularExpression("white"));
+            //var bsonDoc = ft.Eq("Name", "小米4");
+            //ProjectionDefinitionBuilder<BsonDocument> pfb=new ProjectionDefinitionBuilder<BsonDocument>();
+            //var pj1 = pfb.Exclude("_id");
+            
+            //productColl.Find(bsonDoc).Project(pj1).ForEachAsync((doc, index) => Response.Write(doc+"--"+index)).Wait();
 
-            //var t = App.MongoDbContext.Instance.GetMany("Product", f1, Ret);
-            //t.Wait();
-
-            return View();
+            ViewBag.CurrentPage = "index";
+            return View("Index");
         }
-
-        private void Ret(BsonDocument arg1, int arg2) {
-            Response.Write(arg1);
-        }
-
+ 
     }
 }
