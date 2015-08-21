@@ -10,24 +10,30 @@ using MongoDB.Driver;
 namespace ShopMVCAPINew.Controllers {
     public class HomeController : Controller {
         public ActionResult Index() {
-            //Task task = App.MongoDBContext.Instance.Insert("Product", new BsonDocument() {
+            //Task task = App.MongoDbContext.Instance.InsertOne("Product", new BsonDocument() {
             //    {"Name", "HONGMI NOTE"}
             //});
             //task.Wait();
             //ViewBag.PCount = task.IsCompleted;
- 
-            
 
-            //Task<BsonDocument> task = App.MongoDBContext.Instance.GetOne("Product", new BsonDocument("Name", "HONGMI NOTE"));
+
+            
+           // var productCollection = App.MongoDbContext.Instance.GetDBCollection<Models.Product>("Product");
+           //var project= Builders<BsonDocument>.Projection.Exclude("_id");
+           // var task = productCollection.Find(p => p.Name == "HONGMI NOTE").FirstOrDefaultAsync();
+           // task.Wait();
+           // if (task.IsCompleted) {
+           //     var model = task.Result;
+           // }
 
             //BsonDocument bson = task.Result;
             //ViewBag.PCount = bson.GetValue(0);
 
-            FilterDefinitionBuilder<BsonDocument> ft = new FilterDefinitionBuilder<BsonDocument>();
+            //FilterDefinitionBuilder<BsonDocument> ft = new FilterDefinitionBuilder<BsonDocument>();
+            //var f1 = ft.Eq("Name", new BsonRegularExpression("HONG"));
 
-
-            var t = App.MongoDBContext.Instance.GetMany("Product", ft.Eq("Name", ".*HONG.*"), Ret);
-            t.Wait();
+            //var t = App.MongoDbContext.Instance.GetMany("Product", f1, Ret);
+            //t.Wait();
 
             return View();
         }
