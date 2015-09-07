@@ -7,13 +7,54 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrapcss")
     @Scripts.Render("~/bundles/modernizr")
+
+    <script>
+
+        function addCssByLink(url) {
+            var doc = document;
+            var link = doc.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", url);
+
+            var heads = doc.getElementsByTagName("head");
+            if (heads.length)
+                heads[0].appendChild(link);
+            else
+                doc.documentElement.appendChild(link);
+        }
+
+        function loadPercent(num) {
+            document.getElementById("loadTip").style.display = "block";
+            document.getElementById("loadTip").style.width = num + "%";
+        }
+
+    </script>
+
+    <style>
+        html {
+            min-height: 100%;
+            position: relative;
+        }
+
+        #divfoot {
+            position: absolute;
+            bottom: 0;
+        }
+
+        body {
+            background: #fff;
+            padding-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="navbar-fixed-top">
-        <div style="background-color: #000; height: 15px">
+        <div id="loadTip" class="navbar-tipper" style="display: none">
         </div>
-        <div class="container navbar navbar-custom" role="navigation">
+        <script>loadPercent(20)</script>
+        <div class="navbar navbar-default navbar-custom navbar-top-none" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -23,7 +64,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Brand</a>
+                    <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-leaf"></span> &nbsp;API</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,11 +75,19 @@
 
                     <ul class="nav navbar-nav navbar-right" style="padding-right: 30px">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="@Url.Action("Index","Home",new {area=""},null)">主页</a></li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">主题<b class="caret"></b></a>
+                            <ul id="theme" class="dropdown-menu">
+                                <li><a data-theme="red" href="javascript:void(0)">红色</a></li>
+                                <li><a data-theme="red1" href="javascript:void(0)">红色1</a></li>
+                                <li><a data-theme="blue" href="javascript:void(0)">蓝色</a></li>
+                                <li><a data-theme="blue1" href="javascript:void(0)">蓝色1</a></li>
+                                <li><a data-theme="green" href="javascript:void(0)">绿色</a></li>
+                                <li><a data-theme="cyan" href="javascript:void(0)">青色</a></li>
+                                <li><a data-theme="orange" href="javascript:void(0)">橙色</a></li>
+                                <li><a data-theme="orange1" href="javascript:void(0)">橙色1</a></li>
+                                <li><a data-theme="black" href="javascript:void(0)">黑色</a></li>
                                 <li class="divider"></li>
-                                <li><a href="@Url.Action("Index","Help",new {area="HelpPage"})">帮助</a></li>
+                                <li><a data-theme="simple" href="javascript:void(0)">简洁</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -48,21 +97,27 @@
             <!-- /.container-fluid -->
         </div>
     </div>
-
+    <script>loadPercent(40)</script>
     @Scripts.Render("~/bundles/jquery")
-
-    <div class="container" style="padding-top: 90px">
-
-        @RenderSection("carousel", false)
+    @RenderSection("carousel", false)
+    <div class="container" style="padding-bottom: 30px;">
 
         @RenderBody()
 
     </div>
-    <nav style="margin-top: 20px;margin-bottom: 0; -ms-border-radius:0; border-radius:0" class="navbar navbar-default navbar-inverse" role="navigation">
-        <div class="container" style="color: #ffffff; height: 50px; line-height: 50px">
-            All Rights Reserved. 
+    <script>loadPercent(80)</script>
+    <div id="divfoot" style="width: 100%;margin-bottom: 0; -ms-border-radius:0; border-radius: 0;" class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div style="color: #555; height: 70px;line-height: 70px">
+                Copyright &copy;&nbsp; 2013 - 2015 KANGWL Inc. &nbsp;All Rights Reserved.
+                <div class="pull-right customfoot">
+                    <span class="glyphicon glyphicon-fire"></span>
+                    然后，尽情使用吧！
+                </div>
+            </div>
+
         </div>
-    </nav>
+    </div>
     @Scripts.Render("~/Content/bootstrapjs")
     @RenderSection("scripts", required: false)
     <script>
@@ -70,5 +125,45 @@
         $("#headnav").find("li").removeClass("active");
         $("#headnav").find("#" + current).addClass("active");
     </script>
+    <script>loadPercent(90)</script>
+    <script>
+
+        $(document).on("click", "#theme a", function (e) {
+            var theme = $(e.target).attr("data-theme");
+            if (theme === "simple") {
+                theme = '';
+            } else {
+                theme = "-" + theme;
+            }
+            recordThemeCookie(theme);
+            location.href = location.href;
+        });
+
+        function recordThemeCookie(theme) {
+            setCookie("site_theme", theme);
+        }
+        function getThemeCookie() {
+            var theme = getCookie("site_theme");
+            if (theme == null) {
+                theme = "-red";
+            }
+            var link = "/Content/bootstrap-theme" + theme + ".css";
+            addCssByLink(link);
+        }
+
+        getThemeCookie();
+
+        function initThemeSel() {
+            var theme = getCookie("site_theme");
+            if (theme == null || theme === "") {
+                theme = "-simple";
+            }
+            var selTheme = theme.substr(1);
+            $("#theme").find("a[data-theme=" + selTheme + "]").parent("li").addClass("active");
+        }
+
+        initThemeSel();
+    </script>
+    <script>loadPercent(100)</script>
 </body>
 </html>

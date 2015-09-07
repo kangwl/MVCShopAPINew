@@ -1,14 +1,71 @@
 ﻿
-@section carousel { 
- 
-    <div class="jumbotron">
+@section carousel {
+
+    @*<div class="jumbotron">
         <h1>欢迎使用</h1>
         <p>欢迎使用api，欢迎使用欢迎使用欢迎使用欢迎使用，欢迎使用欢迎使用欢迎使用欢迎使用欢迎使用</p>
-        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Help", new {area = "HelpPage"})" role="button">API介绍</a></p> 
-    </div>
-    <div>
-        @RenderPage("../Control/Carousel.cshtml")
-    </div>
- 
-}
+        <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Help", new {area = "HelpPage"})" role="button">API介绍</a>
+        </p>
+    </div>*@
 
+    <div class="jumbotron" style="margin-top: 50px">
+        <div class="container">
+            @RenderPage("../Control/Carousel.cshtml")
+        </div>
+        
+    </div>
+}
+<div class="row">
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <p>API说明</p>
+                </div>
+            </div>
+            <div class="panel-body"> 
+                <p>
+                    这个是关于shop的api接口这个是关于shop的api接口这个是关于shop的api接口
+                </p>
+                <p>
+                    <a class="btn btn-default" href="@Url.Action("Index", "Help", new {area = "HelpPage"})" role="button">查看详细 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <p>API说明</p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <p>
+                    这个是关于shop的api接口这个是关于shop的api接口这个是关于shop的api接口
+                </p>
+                <p>
+                    <a class="btn btn-default" href="@Url.Action("Index", "Help", new {area = "HelpPage"})" role="button">查看详细 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <p>API说明</p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <p>
+                    这个是关于shop的api接口这个是关于shop的api接口这个是关于shop的api接口
+                </p>
+                <p>
+                    <a class="btn btn-default" href="@Url.Action("Index", "Help", new {area = "HelpPage"})" role="button">查看详细 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+ 

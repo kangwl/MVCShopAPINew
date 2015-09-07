@@ -205,7 +205,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\_ObjectID.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -213,6 +212,15 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\TestClient.css" />
+    <Content Include="Content\bootstrap-theme-black.css" />
+    <Content Include="Content\bootstrap-theme-blue.css" />
+    <Content Include="Content\bootstrap-theme-blue1.css" />
+    <Content Include="Content\bootstrap-theme-cyan.css" />
+    <Content Include="Content\bootstrap-theme-green.css" />
+    <Content Include="Content\bootstrap-theme-orange.css" />
+    <Content Include="Content\bootstrap-theme-orange1.css" />
+    <Content Include="Content\bootstrap-theme-red.css" />
+    <Content Include="Content\bootstrap-theme-red1.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -320,10 +328,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jscookie.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="App_Data\SQL\Tables.sql" />
+    <Content Include="Scripts\util.js" />
     <Content Include="Scripts\WebApiTestClient.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
