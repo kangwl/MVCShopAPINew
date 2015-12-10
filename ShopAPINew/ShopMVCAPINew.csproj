@@ -309,6 +309,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientDialogs.cshtml" />
     <None Include="Properties\PublishProfiles\kangwl - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\kangwl - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\leewin - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\leewin - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\main\1.png" />
     <Content Include="Images\main\2.png" />
