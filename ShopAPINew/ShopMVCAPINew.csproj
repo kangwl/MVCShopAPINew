@@ -36,8 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\ShopMVCAPINew.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -307,9 +306,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientReferences.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TestClientDialogs.cshtml" />
-    <None Include="Properties\PublishProfiles\kangwl - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\kangwl - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\lcoal.pubxml" />
+    <None Include="Properties\PublishProfiles\leewin - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\leewin - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\leewin - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\leewin - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\main\1.png" />
